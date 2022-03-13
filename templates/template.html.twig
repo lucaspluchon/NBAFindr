@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('style/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/style.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset("js/typewriter.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("js/script.js") }}"></script>
+{% endblock %}
+
+{% block banner %}
+    <div id="banner">
+        <div id="logo">
+            <h2><span class="blue">NBA</span>Findr</h2>
+        </div>
+        {% block buttons_header %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <p>Made by <strong>Lucas P.</strong></p>
+{% endblock %}

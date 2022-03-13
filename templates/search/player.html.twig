@@ -1,0 +1,61 @@
+{% extends "template.html.twig" %}
+
+{% block title %}NBAFindr - {{ player_infos["name"] }}{% endblock %}
+
+{% block buttons_header %}
+    <a href="/" class="banner_button" id="compare_player">Search players</a>
+{% endblock %}
+
+
+{% block content %}
+<div class="stats">
+    {% if player_infos == null %}
+        <h2>No player has been found !</h2>
+    {% else %}
+        <h2>{{ player_infos["name"] }}</h2>
+        <p>{{ player_infos["team"] }}</p>
+        {% if player_infos["stats"] == null %}
+            <h2 style="margin-top: 40px; font-size: 20px">No stats has been found for this season!</h2>
+        {% else %}
+            <table>
+                <tr>
+                    <td></td>
+                    <td>This season</td>
+                </tr>
+                <tr>
+                    <td>Game played</td>
+                    <td>{{ player_infos["stats"]["games_played"] }}</td>
+                </tr>
+                {% if player_infos["weight"] != 0 %}
+                    <tr>
+                        <td>Weight</td>
+                        <td>{{ player_infos["weight"] }}</td>
+                    </tr>
+                {% endif %}
+                {% if player_infos["height"] != 0 %}
+                    <tr>
+                        <td>Height</td>
+                        <td>{{ player_infos["height"] }}</td>
+                    </tr>
+                {% endif %}
+                <tr>
+                    <td>Field Goals Made per game</td>
+                    <td>{{ player_infos["stats"]["fgm"] }}</td>
+                </tr>
+                <tr>
+                    <td>Field Goals Attempted per game</td>
+                    <td>{{ player_infos["stats"]["fga"] }}</td>
+                </tr>
+                <tr>
+                    <td>Personal Fouls per game</td>
+                    <td>{{ player_infos["stats"]["pf"] }}</td>
+                </tr>
+                <tr>
+                    <td>Assists per game</td>
+                    <td>{{ player_infos["stats"]["ast"] }}</td>
+                </tr>
+            </table>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

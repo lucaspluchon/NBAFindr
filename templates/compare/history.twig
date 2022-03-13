@@ -1,0 +1,29 @@
+{% extends "template.html.twig" %}
+
+{% block title %}NBAFindr - Comparaison history{% endblock %}
+
+{% block buttons_header %}
+    <a href="/" class="banner_button" id="compare_player">Search players</a>
+{% endblock %}
+
+
+{% block content %}
+<div class="stats">
+        <h2>Comparaison history</h2>
+        <table>
+        <tr>
+            <td>Date</td>
+            <td>Player 1</td>
+            <td>Player 2</td>
+        </tr>
+        {% for comparaison in comparaisons %}
+
+        <tr>
+            <td>{{ comparaison.date | date("d/m/Y") }}</td>
+            <td>{{ comparaison.player1 }}</td>
+            <td>{{ comparaison.player2 }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+{% endblock %}

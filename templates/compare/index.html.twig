@@ -1,0 +1,31 @@
+{% extends "template.html.twig" %}
+
+{% block title %}NBAFindr - Compare players{% endblock %}
+
+{% block buttons_header %}
+    <a href="/" class="banner_button" id="compare_player">Search players</a>
+    <a href="/compare_history" class="banner_button" id="compare_player">Compare history</a>
+{% endblock %}
+
+{% block content %}
+    <div id="compare_title">
+        <h1>Compare players stats for this season</h1>
+    </div>
+    <div id="center_button">
+    </div>
+    <div id="center-container">
+        <div id="content_compare">
+            {% for player in players %}
+                <div class="player_box">
+                    <h3>{{ player["first_name"] ~ " " ~ player["last_name"] }}</h3>
+                    <p>{{ player["team"]["full_name"] }}<p>
+                    <input onchange="add_compare(this)" type="checkbox"  name="{{ player["id"] }}">
+                    <label for="test">Compare this player</label>
+                </div>
+            {% endfor %}
+    </div>
+        <a class="classic_button" href="/compare_search?page={{ page + 1 }}">Next page</a>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

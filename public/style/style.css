@@ -1,0 +1,364 @@
+/*
+-------- FONTS
+ */
+
+@font-face {
+    font-family: 'metropolisblack';
+    src: url('../fonts/metropolis-black.woff2') format('woff2'),
+    url('../fonts/metropolis-black.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'metropolislight';
+    src: url('../fonts/metropolis-light.woff2') format('woff2'),
+    url('../fonts/metropolis-light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'metropolisregular';
+    src: url('../fonts/metropolis-regular.woff2') format('woff2'),
+    url('../fonts/metropolis-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body
+{
+    width: 100%;
+}
+
+h1
+{
+    font-size: 35px;
+    color: black;
+    font-family: "metropolisblack";
+    text-align: center;
+}
+
+h2
+{
+    font-size: 45px;
+    font-family: "metropolisblack";
+    color: #262626;
+}
+
+h3
+{
+    font-size: 25px;
+    font-family: "metropolisblack";
+    color: #262626;
+}
+
+
+p
+{
+    font-family: "metropolislight";
+    font-size: 18px;
+    color: black;
+}
+
+strong
+{
+    font-family: "metropolisblack";
+}
+
+footer
+{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    align-items: center;
+}
+
+footer a
+{
+    margin-left: 10px;
+    position: relative;
+    top: -2px;
+    color: black;
+}
+
+.banner_button
+{
+    background-color: #0097e6;
+    font-family: "metropolislight";
+    text-decoration: none;
+    margin-top: 2px;
+    text-align: center;
+    font-size: 14px;
+    transition: 0.4s;
+    color: white;
+}
+
+.banner_button:hover
+{
+    background-color: #444444;
+}
+
+.classic_button
+{
+    background-color: #262626;
+    font-family: "metropolislight";
+    border-style: none;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    transition: 0.4s;
+    color: white;
+    padding: 20px;
+    position: relative;
+    top: -10px;
+}
+
+.classic_button:hover
+{
+    background-color: #444444;
+}
+
+#banner
+{
+    margin-top: 50px;
+    display: flex;
+}
+
+#logo
+{
+    margin-left: 120px;
+}
+
+.blue
+{
+    color: #0097e6;
+}
+
+#compare_player
+{
+    height: 40px;
+    width: 150px;
+    line-height: 40px;
+    margin-left: 50px;
+}
+
+#compare_player
+{
+    height: 40px;
+    width: 150px;
+    line-height: 40px;
+    margin-left: 50px;
+}
+
+#center-container
+{
+    text-align: center;
+    margin-top: 330px;
+}
+
+#center-container2
+{
+    width: 100%;
+    text-align: center;
+}
+
+#content
+{
+    margin-top: -150px;
+}
+
+#content_compare
+{
+    margin-top: -300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user_input
+{
+    background-color: transparent;
+    border-color: #262626;
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    height: 40px;
+    width: 600px;
+    padding-left: 10px;
+    color: black;
+    font-family: 'metropolislight';
+}
+
+.search
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search input[type=text]
+{
+    height: 40px;
+    width: 550px;
+    background: none;
+    border: none;
+
+    font-family: 'metropolislight';
+}
+
+.search input[type=text]::placeholder
+{
+    color: #777a7c;
+}
+
+.search input[type=submit]
+{
+    background-color: transparent;
+    border-color: #262626;
+    color: #262626;
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    height: 35px;
+    font-family: 'metropolislight';
+    position: relative;
+    left: -5px;
+    top: -1px;
+    transition: 0.3s;
+}
+
+.search input[type=submit]:hover
+{
+    border-color: #0097e6;
+    background-color: #0097e6;
+    color: white;
+}
+
+table
+{
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+td
+{
+    border: 1px solid #262626;
+    font-family: 'metropolislight';
+    padding: 5px;
+}
+
+#comparaison_container
+{
+    display: flex;
+    justify-content: center;
+}
+
+.stats
+{
+    margin-top: 80px;
+    text-align: center;
+}
+
+#vs
+{
+    font-size: 30px;
+    margin-top: 90px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.no_margin
+{
+    margin-top: 1px;
+}
+
+.player_box
+{
+    width: 350px;
+    padding: 10px;
+    background-color: #0097e6;
+    color: white;
+    border-color: #262626;
+    border-style: solid;
+    border-width: 2px;
+    margin-bottom: 40px;
+}
+
+.player_box h3
+{
+    color: white;
+}
+
+.player_box p
+{
+    color: white;
+}
+
+
+.player_box input[type=checkbox]
+{
+    margin-top: 14px;
+}
+
+#compare_title
+{
+    margin-top: 50px;
+}
+
+#center_button
+{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+@media all and (max-height: 650px)
+{
+    #content
+    {
+        margin-top: -220px;
+    }
+}
+
+@media all and (max-height: 460px)
+{
+    footer
+    {
+        opacity: 0;
+    }
+}
+
+@media all and (max-width: 710px)
+{
+
+    .user_input
+    {
+        width: 390px;
+    }
+
+    h1
+    {
+        font-size: 32px;
+    }
+
+
+    h2
+    {
+        font-size: 30px;
+    }
+
+    .banner_button
+    {
+        width: 40px;
+        font-size: 12px;
+        margin-top: -5px;
+    }
+}

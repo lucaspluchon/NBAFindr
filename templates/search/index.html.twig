@@ -1,0 +1,25 @@
+{% extends "template.html.twig" %}
+
+{% block title %}NBAFindr - Find a player{% endblock %}
+
+{% block buttons_header %}
+    <a href="/compare_search" class="banner_button" id="compare_player">Compare players</a>
+{% endblock %}
+
+{% block content %}
+    <div id="center-container">
+    <div id="content">
+        <h1>Search any player this season</h1>
+        <div id="center-container2">
+            <div class="search">
+                <div class="user_input">
+                    <form method="get" action="player">
+                        <input name="name" id="search_input" type="text" placeholder="Search for a player">
+                        <input type="submit" value="GO">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

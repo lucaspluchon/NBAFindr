@@ -1,0 +1,119 @@
+{% extends "template.html.twig" %}
+
+{% block title %}NBAFindr - Compare{% endblock %}
+
+{% block buttons_header %}
+    <a href="/" class="banner_button" id="compare_player">Search players</a>
+{% endblock %}
+
+{% block content %}
+<div id="comparaison_container">
+    {% if player1 == null or player2 == null  %}
+        <h2 style="margin-top: 100px" >No player has been found !</h2>
+    {% else %}
+        <div class="stats">
+            <h2>{{ player1["name"] }}</h2>
+            <p>{{ player1["team"] }}</p>
+            <table>
+                <tr>
+                    <td></td>
+                    <td>This season</td>
+                </tr>
+                {% if player1["stats"] == null %}
+                    <tr>
+                        <td>Game played</td>
+                        <td>0</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>Game played</td>
+                        <td>{{ player1["stats"]["games_played"] }}</td>
+                    </tr>
+                {% endif %}
+                {% if player1["weight"] != 0 %}
+                    <tr>
+                        <td>Weight</td>
+                        <td>{{ player1["weight"] }}</td>
+                    </tr>
+                {% endif %}
+                {% if player1["height"] != 0 %}
+                    <tr>
+                        <td>Height</td>
+                        <td>{{ player1["height"] }}</td>
+                    </tr>
+                {% endif %}
+                {% if player1["stats"] != null %}
+                <tr>
+                    <td>Field Goals Made per game</td>
+                    <td>{{ player1["stats"]["fgm"] | default() }}</td>
+                </tr>
+                <tr>
+                    <td>Field Goals Attempted per game</td>
+                    <td>{{ player1["stats"]["fga"] }}</td>
+                </tr>
+                <tr>
+                    <td>Personal Fouls per game</td>
+                    <td>{{ player1["stats"]["pf"] }}</td>
+                </tr>
+                <tr>
+                    <td>Assists per game</td>
+                    <td>{{ player1["stats"]["ast"] }}</td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+        <p id="vs">VS</p>
+        <div class="stats">
+            <h2>{{ player2["name"] }}</h2>
+            <p>{{ player2["team"] }}</p>
+            <table>
+                <tr>
+                    <td></td>
+                    <td>This season</td>
+                </tr>
+                {% if player1["stats"] == null %}
+                    <tr>
+                        <td>Game played</td>
+                        <td>0</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>Game played</td>
+                        <td>{{ player2["stats"]["games_played"] }}</td>
+                    </tr>
+                {% endif %}
+                {% if player2["weight"] != 0 %}
+                    <tr>
+                        <td>Weight</td>
+                        <td>{{ player2["weight"] }}</td>
+                    </tr>
+                {% endif %}
+                {% if player2["height"] != 0 %}
+                    <tr>
+                        <td>Height</td>
+                        <td>{{ player2["height"] }}</td>
+                    </tr>
+                {% endif %}
+                {% if player2["stats"] != null %}
+                <tr>
+                    <td>Field Goals Made per game</td>
+                    <td>{{ player2["stats"]["fgm"] }}</td>
+                </tr>
+                <tr>
+                    <td>Field Goals Attempted per game</td>
+                    <td>{{ player2["stats"]["fga"] }}</td>
+                </tr>
+                <tr>
+                    <td>Personal Fouls per game</td>
+                    <td>{{ player2["stats"]["pf"] }}</td>
+                </tr>
+                <tr>
+                    <td>Assists per game</td>
+                    <td>{{ player2["stats"]["ast"] }}</td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
