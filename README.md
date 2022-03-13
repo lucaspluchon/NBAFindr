@@ -1,2 +1,2 @@
 # NBAFindr
-Very simple NBA Stat interface
+Very simple NBA Stat interface made in Symfony
